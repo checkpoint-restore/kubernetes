@@ -90,4 +90,6 @@ const (
 	ServiceCIDRController                              = "service-cidr-controller"
 	StorageVersionMigratorController                   = "storage-version-migrator-controller"
 	SELinuxWarningController                           = "selinux-warning-controller"
+	PodCheckpointController                            = "podcheckpoint-controller"
+	PodRestoreController                               = "podrestore-controller"
 )
