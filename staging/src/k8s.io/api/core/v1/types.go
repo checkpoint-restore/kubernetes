@@ -4497,6 +4497,14 @@ type PodSpec struct {
 	// +featureGate=GenericWorkload
 	// +optional
 	SchedulingGroup *PodSchedulingGroup `json:"schedulingGroup,omitempty" protobuf:"bytes,43,opt,name=schedulingGroup"`
+	// RestoreFrom specifies a checkpoint image to restore this pod from.
+	// When set, the pod will be restored from a previously checkpointed state
+	// instead of being created from scratch.
+	// The value should be an OCI image reference (e.g., "localhost/checkpoint-pod:latest")
+	// or a path to a checkpoint archive.
+	// This field is immutable and can only be set at pod creation time.
+	// +optional
+	RestoreFrom *string `json:"restoreFrom,omitempty" protobuf:"bytes,44,opt,name=restoreFrom"`
 }
 
 // PodResourceClaim references exactly one ResourceClaim, either directly
